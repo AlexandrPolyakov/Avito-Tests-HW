@@ -1,0 +1,122 @@
+### issue-01
+
+test_morse.py - доктесты для первого задания
+- Открыть pycharm, собрать проект из всех текущих файлов
+- Запустить 'Run Doctests in test_morse'
+- Или python -m doctest -v -o NORMALIZE_WHITESPACE test_morse.py
+
+После запуска по инструкции получить, что Tests passed: 4 of 4 tests
+
+Или при запуске в командной строке:
+
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('ABBA') # doctest: +NORMALIZE_WHITESPACE
+Expecting:
+    '.- -...         -... .-'
+ok
+Trying:
+    encode('ABCDJSKAKADJADF') # doctest: +ELLIPSIS
+Expecting:
+    '.- -... -.-. -.............- .- -.. .--- .- -.. ..-.'
+ok
+Trying:
+    encode(1)
+Expecting:
+    Traceback (most recent call last):
+      File "/Applications/PyCharm CE.app/Contents/helpers/pycharm/docrunner.py"
+      , line 140, in __run
+        compileflags, 1), test.globs)
+      File "<doctest test_morse.encode[1]>", line 1, in <module>
+        encode(1)
+      File "/Users/aleksandrpolakov/PycharmProjects/avito_tests/test_morse.py"
+      , line 42, in encode
+        LETTER_TO_MORSE[letter] for letter in message
+    TypeError: 'int' object is not iterable
+ok
+1 items had no tests:
+    test_morse
+1 items passed all tests:
+   4 tests in test_morse.encode
+4 tests in 2 items.
+4 passed and 0 failed.
+Test passed.
+
+### issue-02
+
+- Открыть pycharm, собрать проект из всех текущих файлов
+- Запустить 'Run pytest in test_morse_2'
+- Получить Tests passed: 3 of 3 tests
+
+Launching pytest with arguments /Users/aleksandrpolakov/PycharmProjects/avito_tests/test_morse_2.py in /Users/aleksandrpolakov/PycharmProjects/avito_tests
+
+============================= test session starts ==============================
+platform darwin -- Python 3.7.9, pytest-6.1.1, py-1.9.0, pluggy-0.13.1 -- /Users/aleksandrpolakov/opt/anaconda3/envs/avito python hw 2/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/aleksandrpolakov/PycharmProjects/avito_tests
+collecting ... collected 3 items
+
+test_morse_2.py::test_decode[---.. -8] PASSED                            [ 33%]
+test_morse_2.py::test_decode[..... ...---53] PASSED                      [ 66%]
+test_morse_2.py::test_decode[.- ...- .. - --- ..--..-AVITO?] PASSED      [100%]
+
+============================== 3 passed in 0.02s ===============================
+
+### issue-03
+
+- Открыть pycharm, собрать проект из всех текущих файлов
+- Запустить 'Run Unittests in test_one_hot_encoder'
+- Получить Tests passed: 6 of 6 tests
+
+Ran 6 tests in 0.003s
+
+OK
+
+### issue-04
+
+- Открыть pycharm, собрать проект из всех текущих файлов
+- Запустить 'Run pytest in test_one_hot_encoder_2'
+- Получить Tests passed: 6 of 6 tests
+
+Testing started at 15:41 ...
+"/Users/aleksandrpolakov/opt/anaconda3/envs/avito python hw 2/bin/python" "/Applications/PyCharm CE.app/Contents/helpers/pycharm/_jb_pytest_runner.py" --path /Users/aleksandrpolakov/PycharmProjects/avito_tests/test_one_hot_encoder_2.py
+Launching pytest with arguments /Users/aleksandrpolakov/PycharmProjects/avito_tests/test_one_hot_encoder_2.py in /Users/aleksandrpolakov/PycharmProjects/avito_tests
+
+============================= test session starts ==============================
+platform darwin -- Python 3.7.9, pytest-6.1.1, py-1.9.0, pluggy-0.13.1 -- /Users/aleksandrpolakov/opt/anaconda3/envs/avito python hw 2/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/aleksandrpolakov/PycharmProjects/avito_tests
+collecting ... collected 6 items
+
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_one_element PASSED    [ 16%]
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_many_elements PASSED  [ 33%]
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_same_elements PASSED  [ 50%]
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_other_words_presense PASSED [ 66%]
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_bad_input PASSED      [ 83%]
+test_one_hot_encoder_2.py::TestOneHotEncoder::test_empty_input PASSED    [100%]
+
+============================== 6 passed in 0.03s ===============================
+
+Process finished with exit code 0
+
+### issue-05
+
+- Была незначительно изменена функция для удобства, а именно: контекстный менеджер заменен на вызов функции
+
+- Открыть pycharm, собрать проект из всех текущих файлов
+- Запустить 'Run pytest in test_what_is_year_now'
+- Получить Tests passed: 6 of 6 tests, 100% покрытие
+- Для проверки покрытия запускал две команды:
+- coverage run -m pytest
+- coverage html
+- Отчет лежит в index.html
+
+Ran 6 tests in 0.004s
+
+OK
+
+Process finished with exit code 0
